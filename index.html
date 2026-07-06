@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ball Better | The Effort Efficiency Score</title>
-<meta name="description" content="Ball Better turns effort into an objective metric. The Effort Efficiency Score (EES) — computer vision applied to game film, scored against the 90% Standard.">
+<title>Ball Better | 1-on-1 Basketball Film Review</title>
+<meta name="description" content="Ball Better breaks down your game film one-on-one and scores the effort that wins possessions — your Effort Efficiency Score. Live film sessions for players, middle school to pro.">
 <link rel="icon" type="image/png" href="emblem-96.png">
 <style>
   :root{
@@ -22,7 +22,6 @@
   html{scroll-behavior:smooth;}
   body{font-family:'Segoe UI',system-ui,-apple-system,sans-serif; color:var(--ink); background:var(--bg); line-height:1.6;}
   .wrap{max-width:1040px; margin:0 auto; padding:0 24px;}
-  /* Header */
   header{background:var(--bg); color:var(--navy); position:sticky; top:0; z-index:10; box-shadow:0 1px 8px rgba(28,52,84,.10); border-bottom:1px solid var(--border);}
   .nav{display:flex; align-items:center; justify-content:space-between; padding:10px 0;}
   .brand{display:flex; align-items:center; gap:12px;}
@@ -30,14 +29,12 @@
   .logo{font-size:20px; font-weight:800; letter-spacing:1px; color:var(--navy);}
   .logo span{color:var(--orange);}
   .nav a.cta{background:var(--orange); color:#F5F3F0; text-decoration:none; padding:10px 20px; border-radius:6px; font-weight:600; font-size:14px; letter-spacing:.3px;}
-  /* Hero */
   .hero{background:var(--navy); color:#EAE8E4; padding:88px 0 96px; text-align:center;}
   .hero h1{font-size:46px; line-height:1.15; max-width:820px; margin:0 auto 20px; font-weight:800; color:#EAE8E4;}
   .hero h1 em{color:var(--sky); font-style:normal;}
-  .hero p.sub{font-size:19px; color:#A8B8C8; max-width:640px; margin:0 auto 36px;}
+  .hero p.sub{font-size:19px; color:#A8B8C8; max-width:660px; margin:0 auto 36px;}
   .hero .cta{display:inline-block; background:var(--orange); color:#F5F3F0; text-decoration:none; padding:15px 34px; border-radius:8px; font-weight:700; font-size:16px; letter-spacing:.3px;}
   .hero .quiet{display:block; margin-top:14px; font-size:13px; color:#7A90A4;}
-  /* Sections */
   section{padding:72px 0;}
   section.soft{background:var(--soft);}
   h2{font-size:30px; color:var(--navy); margin-bottom:14px; font-weight:800;}
@@ -47,19 +44,24 @@
   .tcard h3{color:var(--navy); font-size:19px; margin-bottom:6px;}
   .tcard .cat{font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky); margin-bottom:12px; display:block;}
   .tcard p{font-size:15px; color:var(--muted);}
-  /* Standard band */
+  .scard{background:var(--card); border:1px solid var(--border); border-radius:10px; padding:26px; box-shadow:0 2px 10px rgba(28,52,84,.06);}
+  .scard .num{display:inline-flex; align-items:center; justify-content:center; width:34px; height:34px; border-radius:50%; background:var(--navy); color:#EAE8E4; font-weight:800; font-size:16px; margin-bottom:14px;}
+  .scard h3{color:var(--navy); font-size:18px; margin-bottom:6px;}
+  .scard p{font-size:15px; color:var(--muted);}
   .band{background:var(--navy); color:#EAE8E4; text-align:center; padding:64px 0;}
   .band .big{font-size:72px; font-weight:800; color:var(--sky); line-height:1;}
   .band p{max-width:640px; margin:18px auto 0; color:#A8B8C8; font-size:17px;}
-  /* Founding */
-  .founding .box{background:var(--card); border:1px solid var(--border); border-left:6px solid var(--orange); border-radius:10px; padding:32px; max-width:760px; box-shadow:0 2px 10px rgba(28,52,84,.06);}
-  .founding .box h3{color:var(--navy); font-size:20px; margin-bottom:10px;}
-  .founding .box p{color:var(--muted); font-size:15px; margin-bottom:18px;}
-  .founding a.cta{display:inline-block; background:var(--navy); color:#EAE8E4; text-decoration:none; padding:12px 26px; border-radius:8px; font-weight:700; font-size:15px;}
-  /* Footer */
+  .center-cta{text-align:center; margin-top:40px;}
+  .center-cta a{display:inline-block; background:var(--navy); color:#EAE8E4; text-decoration:none; padding:13px 30px; border-radius:8px; font-weight:700; font-size:15px;}
+  .formcard{background:#fff; border:1px solid var(--border); border-radius:12px; box-shadow:0 2px 10px rgba(28,52,84,.06); overflow:hidden; max-width:760px; margin:0 auto;}
+  .formcard iframe{width:100%; border:0; display:block; min-height:1150px;}
+  .contact-wrap{display:flex; flex-wrap:wrap; gap:36px;}
+  .contact-item{min-width:190px;}
+  .contact-item .k{font-size:12px; font-weight:700; letter-spacing:1.5px; text-transform:uppercase; color:var(--sky); margin-bottom:6px;}
+  .contact-item a{color:var(--navy); text-decoration:none; font-weight:700; font-size:18px;}
+  .contact-item p{color:var(--muted); font-size:17px;}
   footer{background:#141F2F; color:#7A90A4; padding:36px 0; font-size:13px;}
   footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
-  footer a{color:var(--sky); text-decoration:none;}
   @media (max-width:640px){ .hero h1{font-size:32px;} .band .big{font-size:52px;} }
 </style>
 </head>
@@ -70,27 +72,27 @@
       <img src="emblem-96.png" alt="Ball Better emblem">
       <div class="logo">BALL <span>BETTER</span></div>
     </div>
-    <a class="cta" href="mailto:neal@ballbetter.net?subject=Founding%20Program%20Inquiry">Contact</a>
+    <a class="cta" href="#contact">Contact</a>
   </div>
 </header>
 
 <section class="hero">
   <div class="wrap">
     <h1>Effort is not a feeling.<br>It's a <em>number</em>.</h1>
-    <p class="sub">Ball Better is building the Effort Efficiency Score (EES) — computer vision applied to your existing game film, turning "play harder" into an objective, trackable metric for every athlete on your roster.</p>
-    <a class="cta" href="mailto:neal@ballbetter.net?subject=Founding%20Program%20Inquiry&body=Program%3A%0ARole%3A%0A">Request Founding Program Access</a>
-    <span class="quiet">Currently onboarding a limited number of founding programs.</span>
+    <p class="sub">Ball Better breaks down your game film one-on-one and scores the effort that actually wins possessions — so you leave knowing exactly what to work on, not just "play harder."</p>
+    <a class="cta" href="#signup">Register for a Film Review</a>
+    <span class="quiet">Live 1-on-1 film sessions for players — middle school to pro.</span>
   </div>
 </section>
 
 <section>
   <div class="wrap">
     <h2>The Effort Gap is costing you possessions.</h2>
-    <p class="lead">For decades, effort has been described in subjective terms — "great motor," "wanted it more." Subjectivity is the enemy of accountability. Ball Better audits game film through three universal, measurable effort triggers:</p>
+    <p class="lead">Coaches say "great motor" or "he wanted it more." Those are feelings. We put your effort on the record through three universal, measurable triggers:</p>
     <div class="grid3">
-      <div class="tcard"><span class="cat">Create Possessions</span><h3>The Closeout</h3><p>How fast your athletes respond when the ball finds their assignment. Measured, not guessed.</p></div>
-      <div class="tcard"><span class="cat">Extend Possessions</span><h3>The Pursuit</h3><p>The reaction when the ball is loose. The 50/50s decide games — now they're on the record.</p></div>
-      <div class="tcard"><span class="cat">Convert Possessions</span><h3>The Floor Run</h3><p>End-to-end consistency in transition, every possession change, all game long.</p></div>
+      <div class="tcard"><span class="cat">Create Possessions</span><h3>The Closeout</h3><p>How fast you react when the ball finds your man. Measured, not guessed.</p></div>
+      <div class="tcard"><span class="cat">Extend Possessions</span><h3>The Pursuit</h3><p>What you do when the ball's on the floor. The 50/50s decide games — now they're on the record.</p></div>
+      <div class="tcard"><span class="cat">Convert Possessions</span><h3>The Floor Run</h3><p>Your effort end-to-end in transition — every possession change, all game long.</p></div>
     </div>
   </div>
 </section>
@@ -98,25 +100,48 @@
 <section class="band">
   <div class="wrap">
     <div class="big">90%</div>
-    <p>Our north star: a game where no rotation player posts an Effort Efficiency Score below the 90% Standard. Rotations tighten. Transition accelerates. The motor becomes a prerequisite — not a rare trait.</p>
+    <p>The 90% Standard — the level of effort efficiency that turns role players into starters. We show you where you are today, and exactly how to close the gap.</p>
   </div>
 </section>
 
-<section class="soft founding">
+<section class="soft">
   <div class="wrap">
-    <h2>Founding Programs</h2>
-    <p class="lead">Before public launch, a limited group of programs will shape the metric — and lock in advantages permanently.</p>
-    <div class="box">
-      <h3>What founding programs receive</h3>
-      <p>Founding-rate pricing locked for the life of the program &middot; first access to every release &middot; named recognition in the EES validation study &middot; direct input on the reporting your staff actually needs.</p>
-      <a class="cta" href="mailto:neal@ballbetter.net?subject=Founding%20Program%20Inquiry&body=Program%3A%0ARole%3A%0A">Claim a Founding Seat</a>
+    <h2>How a film review works</h2>
+    <p class="lead">No fluff. Three steps from your film to a plan.</p>
+    <div class="grid3">
+      <div class="scard"><div class="num">1</div><h3>Submit your film</h3><p>Register below and share a Hudl or GameChanger link to a recent game.</p></div>
+      <div class="scard"><div class="num">2</div><h3>We score your Big Three</h3><p>We chart every closeout, loose ball, and floor run, and calculate your Effort Efficiency Score.</p></div>
+      <div class="scard"><div class="num">3</div><h3>Live 1-on-1 breakdown</h3><p>We walk your film together over Discord and leave you with the specific habits to fix.</p></div>
+    </div>
+    <div class="center-cta"><a href="#signup">Register for a Film Review</a></div>
+  </div>
+</section>
+
+<section id="signup">
+  <div class="wrap">
+    <h2>Register for a Film Review</h2>
+    <p class="lead">Submit your film and finalize your session below. Takes about two minutes.</p>
+    <div class="formcard">
+      <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUuvvea9TlVuCao0jfUzFcqJK5On7vJxaXml_e62F097sw3w/viewform?embedded=true" title="Register for a Film Review">Loading…</iframe>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="soft">
+  <div class="wrap">
+    <h2>Contact</h2>
+    <p class="lead">Questions before you register? Reach out directly.</p>
+    <div class="contact-wrap">
+      <div class="contact-item"><div class="k">Email</div><a href="mailto:neal@ballbetter.net">neal@ballbetter.net</a></div>
+      <div class="contact-item"><div class="k">Based in</div><p>Anderson, Indiana</p></div>
+      <div class="contact-item"><div class="k">Company</div><p>Ball Better LLC</p></div>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <div>Ball Better LLC &middot; Anderson, IN &middot; <a href="mailto:neal@ballbetter.net">neal@ballbetter.net</a></div>
+    <div>Ball Better LLC &middot; Anderson, IN</div>
     <div>"What you track, you improve."</div>
   </div>
 </footer>
